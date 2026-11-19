@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Learn French with Mr. Doe through friendly live webinars and personalised one-to-one lessons.">
+<title>French Made Easy with Mr. Doe</title>
+<style>
+:root{--navy:#15375b;--blue:#2c6697;--orange:#f2a04a;--cream:#fffaf2;--ink:#253448;--muted:#687789;--white:#fff}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}body{font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--cream);line-height:1.65}
+a{text-decoration:none;color:inherit}.wrap{width:min(1120px,90%);margin:auto}
+header{position:sticky;top:0;z-index:5;background:#fff;box-shadow:0 2px 16px #15375b12}
+nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-weight:900;color:var(--navy);font-size:19px}.brand span{color:var(--orange)}
+.links{display:flex;align-items:center;gap:24px}.links a{font-weight:700;font-size:14px}.links a:hover{color:var(--blue)}
+.btn{display:inline-block;padding:13px 21px;border-radius:10px;font-weight:800;transition:.2s;text-align:center}
+.btn:hover{transform:translateY(-2px)}.primary{background:var(--orange);color:#202020}.dark{background:var(--navy);color:white}.light{border:1px solid white;color:white}
+.menu{display:none;border:0;background:none;font-size:27px;color:var(--navy)}
+.hero{background:linear-gradient(120deg,#15375b,#2c6697);color:white;padding:78px 0}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center}
+.kicker{text-transform:uppercase;letter-spacing:2px;font-size:12px;font-weight:800;color:var(--orange)}
+h1{font-size:clamp(42px,6vw,66px);line-height:1.08;margin:16px 0 20px}
+h1 span{color:#ffc078}.hero p{font-size:18px;max-width:610px;color:#e7eef8}
+.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:27px}
+.portrait-wrap{background:#ffffff16;border:1px solid #ffffff35;padding:15px;border-radius:28px;max-width:370px;margin:auto;transform:rotate(1deg)}
+.portrait{width:100%;display:block;aspect-ratio:1/1;object-fit:cover;border-radius:19px}
+.portrait-caption{text-align:center;padding:12px 5px 4px;font-weight:800}
+.trust{background:white;padding:20px 0}.trust-grid{display:grid;grid-template-columns:repeat(3,1fr);text-align:center;gap:18px}
+.trust strong{display:block;color:var(--navy);font-size:18px}.trust small{color:var(--muted)}
+section{padding:72px 0}.heading{text-align:center;max-width:700px;margin:0 auto 38px}
+.heading h2{font-size:clamp(28px,4vw,37px);line-height:1.2;color:var(--navy)}.heading p{color:var(--muted);margin-top:12px}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:24px}
+.card{background:white;border:1px solid #e8edf2;border-radius:20px;padding:30px;box-shadow:0 8px 28px #15375b0c}
+.card.featured{border:2px solid var(--orange)}.emoji{font-size:40px}.card h3{font-size:24px;color:var(--navy);margin:7px 0}
+.price{font-size:38px;font-weight:900;color:var(--blue);margin:10px 0}.price small{font-size:14px;font-weight:500;color:var(--muted)}
+.card ul{list-style:none;margin:18px 0 23px}.card li{padding:5px 0}.card li:before{content:"✓ ";color:#26966c;font-weight:bold}
+.schedule{background:#edf4fa}.times{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+.slot{background:white;border-radius:15px;padding:25px;border-left:5px solid var(--orange)}
+.slot h3{color:var(--navy);font-size:21px}.slot strong{display:block;font-size:24px;color:var(--blue);margin:5px 0}
+.note{text-align:center;color:var(--muted);font-size:14px;margin-top:18px}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}.step{text-align:center;padding:20px}
+.num{width:50px;height:50px;border-radius:50%;display:grid;place-items:center;background:var(--orange);font-size:22px;font-weight:900;margin:0 auto 14px}
+.step h3{color:var(--navy)}.step p{color:var(--muted);font-size:14px}
+.about{background:white}.about-grid{display:grid;grid-template-columns:.75fr 1.25fr;gap:45px;align-items:center}
+.about-photo{width:100%;max-width:330px;aspect-ratio:1;object-fit:cover;border-radius:25px;box-shadow:14px 14px 0 #f5d6b2}
+.about h2{font-size:35px;color:var(--navy);line-height:1.2}.about p{margin-top:14px;color:var(--muted)}
+.faq{max-width:780px;margin:auto}details{background:white;border:1px solid #e8edf2;border-radius:12px;padding:17px 20px;margin:12px 0}
+summary{font-weight:800;color:var(--navy);cursor:pointer}details p{margin-top:10px;color:var(--muted)}
+.cta{background:var(--navy);color:white;text-align:center;border-radius:24px;padding:42px 25px}
+.cta h2{font-size:32px}.cta p{color:#dce8f4;max-width:620px;margin:12px auto 22px}
+footer{background:#102b49;color:white;text-align:center;padding:32px 0}footer p{font-size:13px;color:#d0dce8;margin-top:8px}
+@media(max-width:760px){.menu{display:block}.links{display:none;position:absolute;top:76px;left:0;width:100%;background:white;padding:22px;flex-direction:column}.links.open{display:flex}.hero-grid,.about-grid{grid-template-columns:1fr}.hero{padding:58px 0}.portrait-wrap{max-width:300px}.cards,.times{grid-template-columns:1fr}.trust-grid,.steps{grid-template-columns:1fr}.about-photo{max-width:260px}.about-grid{gap:30px}}
+</style>
+</head>
+<body>
+<header><nav class="wrap">
+<a class="brand" href="#home">🇫🇷 FRENCH MADE <span>EASY</span></a>
+<button class="menu" aria-label="Toggle navigation" onclick="document.querySelector('.links').classList.toggle('open')">☰</button>
+<div class="links">
+<a href="#classes">Classes</a><a href="#schedule">Schedule</a><a href="#about">About</a><a href="#faq">FAQ</a>
+<a class="btn dark" href="#classes">Register now</a>
+</div></nav></header>
+
+<main>
+<section class="hero" id="home"><div class="wrap hero-grid">
+<div><div class="kicker">Your French journey starts here</div>
+<h1>French Made Easy <span>with Mr. Doe.</span></h1>
+<p>Build confidence, speak naturally and enjoy learning French. Join a friendly live webinar or choose a personalised one-to-one lesson.</p>
+<div class="actions"><a class="btn primary" href="#classes">Explore lessons →</a><a class="btn light" href="#schedule">See webinar times</a></div></div>
+<div class="portrait-wrap"><img class="portrait" src="assets/mr-doe.jpg" alt="Mr. Doe, French teacher"><div class="portrait-caption">Learn French with Mr. Doe 🇫🇷</div></div>
+</div></section>
+
+<div class="trust"><div class="wrap trust-grid">
+<div><strong>🌍 Learn online</strong><small>Join from anywhere</small></div>
+<div><strong>🗣️ Speak with confidence</strong><small>Practical communication</small></div>
+<div><strong>🎯 Learn your way</strong><small>Group or individual lessons</small></div>
+</div></div>
+
+<section id="classes"><div class="wrap">
+<div class="heading"><div class="kicker">Choose your experience</div><h2>Find the right French class for you</h2><p>Simple registration and secure payment through Wise.</p></div>
+<div class="cards">
+<article class="card featured"><div class="emoji">👨‍🏫</div><h3>Private One-to-One Lesson</h3>
+<div class="price">$20 <small>/ lesson</small></div>
+<p>Personalised French instruction focused on your level, needs and goals.</p>
+<ul><li>Individual attention</li><li>Personalised learning goals</li><li>Speaking and pronunciation practice</li><li>Feedback and guided progress</li></ul>
+<a class="btn dark" style="width:100%" href="https://wise.com/pay/r/Tr8FCqi8cie99T8" target="_blank" rel="noopener">Register & pay $20 →</a>
+</article>
+<article class="card"><div class="emoji">👥</div><h3>Live French Webinar</h3>
+<div class="price">$15 <small>/ participant / session</small></div>
+<p>Practise French in a welcoming group, with useful themes and interactive activities.</p>
+<ul><li>Two webinars every week</li><li>Conversation and fluency practice</li><li>Grammar and vocabulary activities</li><li>Learn alongside other students</li></ul>
+<a class="btn primary" style="width:100%" href="https://wise.com/pay/r/10t5hQGnrT1zasQ" target="_blank" rel="noopener">Register & pay $15 →</a>
+</article>
+</div></div></section>
+
+<section class="schedule" id="schedule"><div class="wrap">
+<div class="heading"><div class="kicker">Save your place</div><h2>Weekly webinar schedule 📅</h2><p>Join us twice a week and keep building your French.</p></div>
+<div class="times">
+<div class="slot"><h3>📘 Every Wednesday</h3><strong>4:00 PM GMT</strong><p>Live French webinar</p></div>
+<div class="slot"><h3>🗣️ Every Friday</h3><strong>4:00 PM GMT</strong><p>Live French webinar</p></div>
+</div>
+<p class="note">Webinar registration is $15 per session. Meeting details are provided after registration is confirmed.</p>
+</div></section>
+
+<section><div class="wrap"><div class="heading"><h2>How to get started</h2><p>Three simple steps to begin learning.</p></div>
+<div class="steps">
+<div class="step"><div class="num">1</div><h3>Choose your class</h3><p>Select a private lesson or a Wednesday/Friday webinar.</p></div>
+<div class="step"><div class="num">2</div><h3>Pay through Wise</h3><p>Use the matching payment button to complete your registration.</p></div>
+<div class="step"><div class="num">3</div><h3>Receive your details</h3><p>Mr. Doe will share your lesson or webinar joining information.</p></div>
+</div></div></section>
+
+<section class="about" id="about"><div class="wrap about-grid">
+<img class="about-photo" src="assets/mr-doe.jpg" alt="Mr. Doe">
+<div><div class="kicker">Your French teacher</div><h2>Bonjour, I'm Mr. Doe!</h2>
+<p>Welcome to French Made Easy. My aim is to make learning French clear, practical and enjoyable.</p>
+<p>Whether you want to build strong foundations, improve your conversation skills or become more confident using French, these lessons are designed to help you make steady progress.</p>
+<p>Let's make French part of your everyday life. À bientôt !</p></div>
+</div></section>
+
+<section id="faq"><div class="wrap"><div class="heading"><h2>Frequently asked questions</h2><p>A few helpful details before you register.</p></div>
+<div class="faq">
+<details><summary>When are the webinars?</summary><p>Every Wednesday and Friday at 4:00 PM GMT.</p></details>
+<details><summary>How much does a webinar cost?</summary><p>$15 per participant, per webinar session.</p></details>
+<details><summary>How much is a private lesson?</summary><p>$20 per one-to-one lesson.</p></details>
+<details><summary>How do I receive the meeting link?</summary><p>After paying, contact Mr. Doe to confirm your registration and receive the joining details. Payment alone does not automatically send a meeting link.</p></details>
+<details><summary>Can I join from another country?</summary><p>Yes. The classes are online. Please use the GMT schedule when checking the webinar time in your location.</p></details>
+</div></div></section>
+
+<section><div class="wrap"><div class="cta">
+<h2>Ready to make French easy? 🇫🇷</h2><p>Choose your class and take the next step in your French-learning journey.</p>
+<div class="actions" style="justify-content:center"><a class="btn primary" href="https://wise.com/pay/r/Tr8FCqi8cie99T8" target="_blank" rel="noopener">Private lesson — $20</a><a class="btn primary" href="https://wise.com/pay/r/10t5hQGnrT1zasQ" target="_blank" rel="noopener">Webinar — $15</a></div>
+</div></div></section>
+</main>
+<footer><div class="wrap"><strong>🇫🇷 French Made Easy with Mr. Doe</strong><p>Learn French. Speak confidently. Enjoy the journey.</p><p>© <span id="year"></span> French Made Easy with Mr. Doe.</p></div></footer>
+<script>document.getElementById('year').textContent=new Date().getFullYear();document.querySelectorAll('.links a').forEach(a=>a.addEventListener('click',()=>document.querySelector('.links').classList.remove('open')));</script>
+</body></html>
